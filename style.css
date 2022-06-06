@@ -1,0 +1,275 @@
+body {
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 2.5rem;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* main container box */
+.container {
+  height: 100%;
+  width: 100%;
+  background: #1a1a1a;
+  box-shadow: inset -2rem -2rem 4rem rgba(255, 255, 255, 0.07),
+    inset 2rem 2rem 4rem rgba(0, 0, 0, 0.83);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+
+/* hide the scrollbar*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* wire */
+.wire {
+  position: absolute;
+  top: 2.5rem;
+  height: 40%;
+  z-index: 100;
+  cursor: pointer;
+}
+.wire img {
+  height: 100%;
+  animation: wire 5s linear infinite;
+}
+@keyframes wire {
+  0% {
+    transform: rotateZ(0deg);
+    transform-origin: 0% 0%;
+  }
+  25% {
+    transform: rotateZ(-10deg);
+    transform-origin: 0% 0%;
+  }
+  50% {
+    transform: rotateZ(0deg);
+    transform-origin: 0% 0%;
+  }
+  75% {
+    transform: rotateZ(10deg);
+    transform-origin: 0% 0%;
+  }
+  100% {
+    transform: rotateZ(0deg);
+    transform-origin: 0% 0%;
+  }
+}
+
+/* theme */
+.plugTheme {
+  height: 5rem;
+  width: 18rem;
+  background: #191919;
+  box-shadow: -0.7rem -0.7rem 1.7rem rgba(91, 91, 91, 0.25),
+    0.7rem 0.7rem 1.7rem rgba(0, 0, 0, 0.88);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Hide the browser's default radio button */
+.cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  padding: 0.9rem;
+  padding-top: 0.4rem;
+  background: #191919;
+  box-shadow: inset -8px -8px 16px rgba(171, 170, 170, 0.06),
+    inset 8px 8px 16px rgba(0, 0, 0, 0.59);
+  border-radius: 1000px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+/* name */
+.myname {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #fff;
+  font-family: "Unica One", cursive;
+  font-size: 10rem;
+  color: transparent;
+  text-align: center;
+  z-index: 10;
+  text-shadow: 1rem 1rem 0.5rem #000000;
+}
+
+/* FLICKERING EFFECT */
+@keyframes purple {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    color: white;
+    text-shadow: 0 0 0.125rem #fff, 0 0 0.375rem #fff, 0 0 0.9375rem #fff,
+      0 0 2.5rem rgb(152, 26, 255), 0 0 5rem rgb(152, 26, 255),
+      0 0 5.625rem rgb(152, 26, 255), 0 0 6.25rem rgb(152, 26, 255),
+      0 0 0.9375rem rgb(152, 26, 255);
+  }
+  1%,
+  5%,
+  10%,
+  20%,
+  24%,
+  54%,
+  55%,
+  56% {
+    color: #1a1a1a;
+    text-shadow: -0.45px 0.45px 0 white, 0.45px 0.45px 0 white,
+      0.45px -0.45px 0 white, -0.45px -0.45px 0 white;
+  }
+}
+@keyframes orange {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    color: white;
+    text-shadow: 0 0 0.125rem #fff, 0 0 0.375rem #fff, 0 0 0.9375rem #fff,
+      0 0 2.5rem rgb(255, 125, 26), 0 0 5rem rgb(255, 125, 26),
+      0 0 5.625rem rgb(255, 125, 26), 0 0 6.25rem rgb(255, 125, 26),
+      0 0 0.9375rem rgb(255, 125, 26);
+  }
+  1%,
+  5%,
+  10%,
+  20%,
+  24%,
+  54%,
+  55%,
+  56% {
+    color: #1a1a1a;
+    text-shadow: -0.45px 0.45px 0 white, 0.45px 0.45px 0 white,
+      0.45px -0.45px 0 white, -0.45px -0.45px 0 white;
+  }
+}
+@keyframes blue {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    color: white;
+    text-shadow: 0 0 0.125rem #fff, 0 0 0.375rem #fff, 0 0 0.9375rem #fff,
+      0 0 2.5rem rgb(0, 208, 255), 0 0 5rem rgb(0, 208, 255),
+      0 0 5.625rem rgb(0, 208, 255), 0 0 6.25rem rgb(0, 208, 255),
+      0 0 0.9375rem rgb(0, 208, 255);
+  }
+  1%,
+  5%,
+  10%,
+  20%,
+  24%,
+  54%,
+  55%,
+  56% {
+    color: #1a1a1a;
+    text-shadow: -0.45px 0.45px 0 white, 0.45px 0.45px 0 white,
+      0.45px -0.45px 0 white, -0.45px -0.45px 0 white;
+  }
+}
+
+/* navbar */
+.nav {
+  position: absolute;
+  bottom: 2.5rem;
+  background: blue;
+  height: 3rem;
+  width: 5rem;
+  border-radius: 1000px 1000px 0 0;
+  background: #191919;
+  box-shadow: inset -15px -15px 20px rgba(64, 62, 62, 0.25),
+    inset 15px 15px 20px rgba(0, 0, 0, 0.51);
+}
+
+@media only screen and (max-width: 750px) {
+  .myname {
+    font-size: 7rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .myname {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .myname {
+    font-size: 4rem;
+    margin-top: 3rem;
+  }
+  body {
+    padding: 1rem;
+  }
+  .wire {
+    top: 1rem;
+  }
+  .nav {
+    bottom: 1rem;
+  }
+  .container {
+    justify-content: center;
+  }
+  .plugTheme {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .myname {
+    font-size: 3rem;
+  }
+  .plugTheme {
+    width: 10rem;
+  }
+}
