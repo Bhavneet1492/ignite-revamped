@@ -17,7 +17,7 @@ body {
   width: 100%;
   background: #1a1a1a;
   box-shadow: inset -2rem -2rem 4rem rgba(255, 255, 255, 0.07),
-    inset 2rem 2rem 4rem rgba(0, 0, 0, 0.83);
+    inset 2rem 2rem 4rem rgba(0, 0, 0, 1);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -40,41 +40,32 @@ body {
 .wire {
   position: absolute;
   top: 2.5rem;
-  height: 40%;
+  z-index: -10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 100;
   cursor: pointer;
+  overflow-y: hidden;
 }
-.wire img {
-  height: 100%;
-  animation: wire 5s linear infinite;
+
+#wire {
+  /* display: none; */
 }
-@keyframes wire {
-  0% {
-    transform: rotateZ(0deg);
-    transform-origin: 0% 0%;
-  }
-  25% {
-    transform: rotateZ(-10deg);
-    transform-origin: 0% 0%;
-  }
-  50% {
-    transform: rotateZ(0deg);
-    transform-origin: 0% 0%;
-  }
-  75% {
-    transform: rotateZ(10deg);
-    transform-origin: 0% 0%;
-  }
-  100% {
-    transform: rotateZ(0deg);
-    transform-origin: 0% 0%;
-  }
+#wire2 {
+  display: none;
+}
+#wire3 {
+  display: none;
+}
+#wire4 {
+  display: none;
 }
 
 /* theme */
 .plugTheme {
-  height: 5rem;
-  width: 18rem;
+  height: 4rem;
+  width: 14.5rem;
   background: #191919;
   box-shadow: -0.7rem -0.7rem 1.7rem rgba(91, 91, 91, 0.25),
     0.7rem 0.7rem 1.7rem rgba(0, 0, 0, 0.88);
@@ -96,14 +87,14 @@ body {
 
 /* Create a custom radio button */
 .checkmark {
-  padding: 0.9rem;
-  padding-top: 0.4rem;
+  padding: 0.5rem;
+  padding-top: 0rem;
   background: #191919;
   box-shadow: inset -8px -8px 16px rgba(171, 170, 170, 0.06),
     inset 8px 8px 16px rgba(0, 0, 0, 0.59);
   border-radius: 1000px;
   color: white;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 900;
 }
 
