@@ -19,7 +19,7 @@ blue.checked = false;
 
 let rect = wire.getBoundingClientRect();
 console.log(rect.height);
-reduction = 0.255 * rect.height;
+reduction = 0.26 * rect.height;
 themeWrapper.style.height = rect.height - reduction + "px";
 
 purple.addEventListener("click", () => {
@@ -27,7 +27,7 @@ purple.addEventListener("click", () => {
     wire4.style.display = "block";
     let rect = wire4.getBoundingClientRect();
     console.log(rect.height);
-    reduction = 0.17 * rect.height;
+    reduction = 0.18 * rect.height;
     themeWrapper.style.height = rect.height - reduction + "px";
     wire.style.display = "none";
     plugTheme.style.opacity = "0";
@@ -44,7 +44,7 @@ orange.addEventListener("click", () => {
     wire3.style.display = "block";
     let rect = wire3.getBoundingClientRect();
     console.log(rect.height);
-    reduction = 0.17 * rect.height;
+    reduction = 0.18 * rect.height;
     themeWrapper.style.height = rect.height - reduction + "px";
     wire.style.display = "none";
     plugTheme.style.opacity = "0";
@@ -61,7 +61,7 @@ blue.addEventListener("click", () => {
     wire2.style.display = "block";
     let rect = wire2.getBoundingClientRect();
     console.log(rect.height);
-    reduction = 0.17 * rect.height;
+    reduction = 0.18 * rect.height;
     themeWrapper.style.height = rect.height - reduction + "px";
     wire.style.display = "none";
     plugTheme.style.opacity = "0";
