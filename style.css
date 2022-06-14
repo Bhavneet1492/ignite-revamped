@@ -1,108 +1,350 @@
-// sleep function implementation
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+input,
+textarea,
+button,
+select,
+a,
+img,
+div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-purple = document.getElementById("purple");
-orange = document.getElementById("orange");
-blue = document.getElementById("blue");
-myname = document.getElementById("myname");
-wire = document.getElementById("wire");
-wire2 = document.getElementById("wire2");
-wire3 = document.getElementById("wire3");
-wire4 = document.getElementById("wire4");
-plugTheme = document.getElementById("plugTheme");
-themeWrapper = document.getElementById("themeWrapper");
+* {
+  zoom: 90%;
+}
+body {
+  zoom: 110%;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 2.5rem;
+  width: 100vw;
+  height: 100vh;
+  /* height: 92vh; */
+}
 
-purple.checked = false;
-orange.checked = false;
-blue.checked = false;
+/* main container box */
+.container {
+  height: 100%;
+  width: 100%;
+  background: #1a1a1a;
+  box-shadow: inset -2rem -2rem 4rem rgba(255, 255, 255, 0.07),
+    inset 2rem 2rem 4rem rgba(0, 0, 0, 1);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-betweem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  background-image: url("./bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-let rect = wire.getBoundingClientRect();
-console.log(rect.height);
-reduction = 0.26 * rect.height;
-themeWrapper.style.height = rect.height - reduction + "px";
+/* hide the scrollbar*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
-purple.addEventListener("click", () => {
-  if (purple.checked == true) {
-    wire4.style.display = "block";
-    let rect = wire4.getBoundingClientRect();
-    console.log(rect.height);
-    reduction = 0.18 * rect.height;
-    themeWrapper.style.height = rect.height - reduction + "px";
-    wire.style.display = "none";
-    plugTheme.style.opacity = "0";
-    wire2.style.display = "none";
-    wire3.style.display = "none";
-    sleep(200).then(function () {
-      myname.style.animation = "purple 5s infinite alternate";
-    });
+/* wire */
+.wire {
+  position: absolute;
+  top: 3rem;
+  z-index: -10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  overflow-y: hidden;
+}
+
+.wire img {
+}
+
+#wire {
+  /* display: none; */
+}
+#wire2 {
+  display: none;
+}
+#wire3 {
+  display: none;
+}
+#wire4 {
+  display: none;
+}
+
+/* theme */
+.themeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.plugTheme {
+  height: 4.2rem;
+  width: 14.5rem;
+  background: #191919;
+  box-shadow: -1rem -1rem 2rem rgba(91, 91, 91, 0.25),
+    1rem 1rem 2rem rgba(0, 0, 0, 0.88);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Hide the browser's default radio button */
+.cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  padding: 0.9rem;
+  padding-right: 0.3rem;
+  padding-left: 0.5rem;
+  margin: 1rem;
+  font-family: monospace;
+  padding-top: 0.2rem;
+  background: #191919;
+  box-shadow: inset -8px -8px 16px rgba(171, 170, 170, 0.06),
+    inset 8px 8px 16px rgba(0, 0, 0, 0.59);
+  border-radius: 1000px;
+  color: white;
+  font-size: 1.8rem;
+  letter-spacing: -0.4rem;
+  font-weight: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: left;
+}
+
+/* name */
+.myname {
+  margin-top: 2.5rem;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #fff;
+  font-family: "Send Flowers", cursive;
+  font-size: 10rem;
+  color: transparent;
+  text-align: center;
+  z-index: 10;
+  text-shadow: 1rem 1rem 0.5rem #000000;
+  font-style: italic;
+}
+
+/* FLICKERING EFFECT */
+@keyframes purple {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    color: white;
+    text-shadow: 0 0 0.125rem #fff, 0 0 0.375rem #fff, 0 0 0.9375rem #fff,
+      0 0 2.5rem rgb(152, 26, 255), 0 0 5rem rgb(152, 26, 255),
+      0 0 5.625rem rgb(152, 26, 255), 0 0 6.25rem rgb(152, 26, 255),
+      0 0 0.9375rem rgb(152, 26, 255), 1rem 1rem 0.5rem #000000;
   }
-});
-
-orange.addEventListener("click", () => {
-  if (orange.checked == true) {
-    wire3.style.display = "block";
-    let rect = wire3.getBoundingClientRect();
-    console.log(rect.height);
-    reduction = 0.18 * rect.height;
-    themeWrapper.style.height = rect.height - reduction + "px";
-    wire.style.display = "none";
-    plugTheme.style.opacity = "0";
-    wire2.style.display = "none";
-    wire4.style.display = "none";
-    sleep(200).then(function () {
-      myname.style.animation = "orange 5s infinite alternate";
-    });
+  1%,
+  5%,
+  10%,
+  20%,
+  24%,
+  54%,
+  55%,
+  56% {
+    color: #1a1a1a;
+    text-shadow: -0.45px 0.45px 0 white, 0.45px 0.45px 0 white,
+      0.45px -0.45px 0 white, -0.45px -0.45px 0 white, 1rem 1rem 0.5rem #000000;
   }
-});
-
-blue.addEventListener("click", () => {
-  if (blue.checked == true) {
-    wire2.style.display = "block";
-    let rect = wire2.getBoundingClientRect();
-    console.log(rect.height);
-    reduction = 0.18 * rect.height;
-    themeWrapper.style.height = rect.height - reduction + "px";
-    wire.style.display = "none";
-    plugTheme.style.opacity = "0";
-    wire3.style.display = "none";
-    wire4.style.display = "none";
-    sleep(200).then(function () {
-      myname.style.animation = "blue 5s infinite alternate";
-    });
+}
+@keyframes orange {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    color: white;
+    text-shadow: 0 0 0.125rem #fff, 0 0 0.375rem #fff, 0 0 0.9375rem #fff,
+      0 0 2.5rem rgb(255, 125, 26), 0 0 5rem rgb(255, 125, 26),
+      0 0 5.625rem rgb(255, 125, 26), 0 0 6.25rem rgb(255, 125, 26),
+      0 0 0.9375rem rgb(255, 125, 26), 1rem 1rem 0.5rem #000000;
   }
-});
+  1%,
+  5%,
+  10%,
+  20%,
+  24%,
+  54%,
+  55%,
+  56% {
+    color: #1a1a1a;
+    text-shadow: -0.45px 0.45px 0 white, 0.45px 0.45px 0 white,
+      0.45px -0.45px 0 white, -0.45px -0.45px 0 white, 1rem 1rem 0.5rem #000000;
+  }
+}
+@keyframes blue {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    color: white;
+    text-shadow: 0 0 0.125rem #fff, 0 0 0.375rem #fff, 0 0 0.9375rem #fff,
+      0 0 2.5rem rgb(0, 208, 255), 0 0 5rem rgb(0, 208, 255),
+      0 0 5.625rem rgb(0, 208, 255), 0 0 6.25rem rgb(0, 208, 255),
+      0 0 0.9375rem rgb(0, 208, 255), 1rem 1rem 0.5rem #000000;
+  }
+  1%,
+  5%,
+  10%,
+  20%,
+  24%,
+  54%,
+  55%,
+  56% {
+    color: #1a1a1a;
+    text-shadow: -0.45px 0.45px 0 white, 0.45px 0.45px 0 white,
+      0.45px -0.45px 0 white, -0.45px -0.45px 0 white, 1rem 1rem 0.5rem #000000;
+  }
+}
 
-wire.addEventListener("click", () => {
-  purple.checked = false;
-  orange.checked = false;
-  blue.checked = false;
-  myname.style.animation = "none";
-});
-wire2.addEventListener("click", () => {
-  wire2.style.display = "none";
-  wire.style.display = "block";
-  plugTheme.style.opacity = "1";
-  purple.checked = false;
-  orange.checked = false;
-  blue.checked = false;
-  myname.style.animation = "none";
-});
-wire3.addEventListener("click", () => {
-  wire3.style.display = "none";
-  wire.style.display = "block";
-  plugTheme.style.opacity = "1";
-  purple.checked = false;
-  orange.checked = false;
-  blue.checked = false;
-  myname.style.animation = "none";
-});
-wire4.addEventListener("click", () => {
-  wire4.style.display = "none";
-  wire.style.display = "block";
-  plugTheme.style.opacity = "1";
-  purple.checked = false;
-  orange.checked = false;
-  blue.checked = false;
-  myname.style.animation = "none";
-});
+/* navbar */
+.nav {
+  margin-top: 2rem;
+  justify-self: flex-end;
+  align-self: flex-end;
+  background: rgba(255, 0, 0, 0.175);
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s;
+}
+.nav ul {
+  /* background: rgba(0, 0, 255, 0.184); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  list-style: none;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-family: "Comfortaa";
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 1100px) {
+  .myname {
+    font-size: 9rem;
+    margin-top: 5rem;
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .myname {
+    font-size: 8rem;
+    margin: 2rem;
+  }
+  .nav a {
+    font-size: 1rem;
+  }
+  .nav {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .myname {
+    font-size: 7rem;
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .myname {
+    font-size: 5.5rem;
+    margin-top: 6rem;
+  }
+  .checkmark {
+    padding: 0.9rem;
+    padding-right: 0.3rem;
+    padding-left: 0.6rem;
+    margin: 1.1rem;
+    padding-top: 0.3rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.4rem;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .myname {
+    font-size: 4rem;
+    /* margin-top: 3rem; */
+  }
+  body {
+    padding: 1rem;
+  }
+  .wire {
+    top: 1rem;
+  }
+  .checkmark {
+    padding: 0.9rem;
+    padding-right: 0.3rem;
+    padding-left: 0.6rem;
+    margin: 1.1rem;
+    padding-top: 0.3rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.5rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .myname {
+    font-size: 3rem;
+  }
+}
