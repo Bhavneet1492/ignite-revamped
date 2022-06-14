@@ -2,11 +2,16 @@ input,
 textarea,
 button,
 select,
-a {
+a,
+img,
+div {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+* {
+  zoom: 90%;
+}
 body {
+  zoom: 110%;
   background: #1a1a1a;
   display: flex;
   align-items: center;
@@ -17,6 +22,7 @@ body {
   padding: 2.5rem;
   width: 100vw;
   height: 100vh;
+  /* height: 92vh; */
 }
 
 /* main container box */
@@ -107,18 +113,18 @@ body {
 
 /* Create a custom radio button */
 .checkmark {
-  padding: 0.7rem;
-  padding-right: 0.4rem;
-  padding-left: 0.4rem;
-  margin: 0.7rem;
+  padding: 0.9rem;
+  padding-right: 0.3rem;
+  padding-left: 0.5rem;
+  margin: 1rem;
   font-family: monospace;
-  padding-top: 0.1rem;
+  padding-top: 0.2rem;
   background: #191919;
   box-shadow: inset -8px -8px 16px rgba(171, 170, 170, 0.06),
     inset 8px 8px 16px rgba(0, 0, 0, 0.59);
   border-radius: 1000px;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   letter-spacing: -0.4rem;
   font-weight: 1000;
   display: flex;
@@ -245,43 +251,81 @@ body {
 
 /* navbar */
 .nav {
-  position: absolute;
-  bottom: 2.5rem;
-  background: blue;
-  height: 3rem;
-  width: 5rem;
-  border-radius: 1000px 1000px 0 0;
-  background: #191919;
-  box-shadow: inset -15px -15px 20px rgba(64, 62, 62, 0.25),
-    inset 15px 15px 20px rgba(0, 0, 0, 0.51);
+  margin-top: 2rem;
+  justify-self: flex-end;
+  align-self: flex-end;
+  background: rgba(255, 0, 0, 0.175);
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s;
+}
+.nav ul {
+  /* background: rgba(0, 0, 255, 0.184); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  list-style: none;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-family: "Comfortaa";
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 1100px) {
+  .myname {
+    font-size: 9rem;
+    margin-top: 5rem;
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .myname {
+    font-size: 8rem;
+    margin: 2rem;
+  }
+  .nav a {
+    font-size: 1rem;
+  }
+  .nav {
+    margin-top: 0;
+  }
 }
 
 @media only screen and (max-width: 750px) {
   .myname {
     font-size: 7rem;
+    margin-top: 3rem;
   }
 }
 
 @media only screen and (max-width: 540px) {
   .myname {
     font-size: 5.5rem;
+    margin-top: 6rem;
   }
   .checkmark {
-    padding: 0.53rem;
+    padding: 0.9rem;
     padding-right: 0.3rem;
-    padding-left: 0.3rem;
-    margin: 0.7rem;
-    padding-top: 0rem;
-    color: white;
-    font-size: 1.6rem;
-    letter-spacing: -0.5rem;
-    font-weight: 1000;
+    padding-left: 0.6rem;
+    margin: 1.1rem;
+    padding-top: 0.3rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.4rem;
   }
 }
 @media only screen and (max-width: 460px) {
   .myname {
     font-size: 4rem;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
   }
   body {
     padding: 1rem;
@@ -289,8 +333,14 @@ body {
   .wire {
     top: 1rem;
   }
-  .nav {
-    bottom: 1rem;
+  .checkmark {
+    padding: 0.9rem;
+    padding-right: 0.3rem;
+    padding-left: 0.6rem;
+    margin: 1.1rem;
+    padding-top: 0.3rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.5rem;
   }
 }
 @media only screen and (max-width: 350px) {
