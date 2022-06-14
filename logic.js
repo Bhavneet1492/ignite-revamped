@@ -11,14 +11,24 @@ wire2 = document.getElementById("wire2");
 wire3 = document.getElementById("wire3");
 wire4 = document.getElementById("wire4");
 plugTheme = document.getElementById("plugTheme");
+themeWrapper = document.getElementById("themeWrapper");
 
 purple.checked = false;
 orange.checked = false;
 blue.checked = false;
 
+let rect = wire.getBoundingClientRect();
+console.log(rect.height);
+reduction = 0.255 * rect.height;
+themeWrapper.style.height = rect.height - reduction + "px";
+
 purple.addEventListener("click", () => {
   if (purple.checked == true) {
     wire4.style.display = "block";
+    let rect = wire4.getBoundingClientRect();
+    console.log(rect.height);
+    reduction = 0.17 * rect.height;
+    themeWrapper.style.height = rect.height - reduction + "px";
     wire.style.display = "none";
     plugTheme.style.opacity = "0";
     wire2.style.display = "none";
@@ -32,6 +42,10 @@ purple.addEventListener("click", () => {
 orange.addEventListener("click", () => {
   if (orange.checked == true) {
     wire3.style.display = "block";
+    let rect = wire3.getBoundingClientRect();
+    console.log(rect.height);
+    reduction = 0.17 * rect.height;
+    themeWrapper.style.height = rect.height - reduction + "px";
     wire.style.display = "none";
     plugTheme.style.opacity = "0";
     wire2.style.display = "none";
@@ -45,6 +59,10 @@ orange.addEventListener("click", () => {
 blue.addEventListener("click", () => {
   if (blue.checked == true) {
     wire2.style.display = "block";
+    let rect = wire2.getBoundingClientRect();
+    console.log(rect.height);
+    reduction = 0.17 * rect.height;
+    themeWrapper.style.height = rect.height - reduction + "px";
     wire.style.display = "none";
     plugTheme.style.opacity = "0";
     wire3.style.display = "none";
