@@ -11,14 +11,35 @@ wire2 = document.getElementById("wire2");
 wire3 = document.getElementById("wire3");
 wire4 = document.getElementById("wire4");
 plugTheme = document.getElementById("plugTheme");
+checkmarks = document.querySelectorAll(".checkmark");
 themeWrapper = document.getElementById("themeWrapper");
+
+const scrollContainer = document.querySelector(".container");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  scrollContainer.scrollLeft += evt.deltaY;
+  console.log(evt.deltaY);
+  myname.style.transform = "translateX(-110%)";
+  plugTheme.style.boxShadow = "none";
+  plugTheme.style.background = "transparent";
+  checkmarks.forEach(function (checkmark) {
+    checkmark.style.boxShadow = "none";
+    checkmark.style.color = "transparent";
+    checkmark.style.background = "transparent";
+  });
+  wire.style.transform = "translateY(-110%)";
+  wire2.style.transform = "translateY(-110%)";
+  wire3.style.transform = "translateY(-110%)";
+  wire4.style.transform = "translateY(-110%)";
+  wire.style.dislpay = "none";
+});
 
 purple.checked = false;
 orange.checked = false;
 blue.checked = false;
 
 let rect = wire.getBoundingClientRect();
-console.log(rect.height);
 reduction = 0.26 * rect.height;
 themeWrapper.style.height = rect.height - reduction + "px";
 
